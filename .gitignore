@@ -1,4 +1,10 @@
-# 忽略build文件夹
+# 忽略文件夹
 /qt-client/build/
-# 忽略配置user文件
-/qt-client/SlashLearn.pro.user
+/keil-hardware/DebugConfig/
+/keil-hardware/Listings/
+/keil-hardware/Objects/
+
+# 忽略文件
+/qt-client/remote.pro.user
+/keil-hardware/remote-update.uvguix.chenphxx
+/keil-hardware/remote-update.uvoptx
