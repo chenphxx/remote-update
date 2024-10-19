@@ -1,0 +1,4 @@
+# 忽略build文件夹
+/qt-client/build/
+# 忽略配置user文件
+/qt-client/SlashLearn.pro.user
