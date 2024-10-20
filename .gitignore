@@ -3,6 +3,7 @@
 /keil-hardware/DebugConfig/
 /keil-hardware/Listings/
 /keil-hardware/Objects/
+/keil-hardware/.vscode/
 
 # 忽略文件
 /qt-client/remote.pro.user
