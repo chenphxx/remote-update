@@ -1,16 +1,31 @@
 #include "stm32f10x.h"
 
-#define FLASH_JUMP_ADDR (0x08008000)
+#define FLASH_JUMP_ADDR (0x08000000)
 
 typedef void (*pFunction)(void);
+void jump_to_app(uint32_t app_addr);
 
-/*!
-* @brief 跳转到应用程序段
-*        执行条件：无
+int main(void)
+{
+    /*
+      初始化程序省略.....
+    */
 
-* @param app_addr: 用户代码起始地址
-* @retval 无
-*/
+    if (((FLASH_JUMP_ADDR + 4) & 0xFF000000) == 0x08000000) // Judge if start at 0X08XXXXXX.
+    {
+        jump_to_app(FLASH_JUMP_ADDR); // 跳转到程序地址
+    }
+
+    while (1){}
+}
+
+
+/**
+ * @brief 跳转到应用程序段
+ * 
+ * @param app_addr 用户代码起始地址
+ * @return 无
+ */
 void jump_to_app(uint32_t app_addr)
 {
     pFunction jump_to_application;
@@ -25,22 +40,5 @@ void jump_to_app(uint32_t app_addr)
         // 初始化用户程序栈指针
         __set_MSP(*(__IO uint32_t *)jump_address);
         jump_to_application();
-    }
-}
-
-
-int main(void)
-{
-    /*
-      初始化程序省略.....
-    */
-
-    if (((FLASH_JUMP_ADDR + 4) & 0xFF000000) == 0x08000000) // Judge if start at 0X08XXXXXX.
-    {
-        jump_to_app(FLASH_JUMP_ADDR); // 跳转到程序地址
-    }
-
-    while (1)
-    {
     }
 }
