@@ -1,6 +1,6 @@
 ## 说明
 
-项目尚处于开发初期, 还并没有实现功能 
+项目尚处于开发初期, 还并没有实现功能; 目前文档中提到的硬件以及软件设计, 在后续的开发推进中, 随时都可能进行调整 
 
 ## 关于本项目
 
@@ -45,5 +45,3 @@
 [AN2606](https://www.st.com/resource/en/application_note/cd00167594-stm32-microcontroller-system-memory-boot-mode-stmicroelectronics.pdf) 不同型号的STM32微控制器的bootloader的功能, 支持的接口以及如何进入bootloader模式的引导和引脚配置 
 
 [AN3155](https://www.st.com/resource/en/application_note/cd00264342-usart-protocol-used-in-the-stm32-bootloader-stmicroelectronics.pdf) 通过`USART`来使用bootloader的详细协议, 包括了启动流程, 可用流程以及相应格式 
-
-
